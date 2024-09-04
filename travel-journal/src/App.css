@@ -5,38 +5,91 @@
   text-align: center;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  background-color: #f0f0f0;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav {
+  justify-content: center;
+  background-color: #F55A5A;
+  text-align: center;
+  border: seashell;
+  border-radius: 8px
 }
 
 .card {
+  display: flex; /* Use flexbox to align image and content side by side */
   padding: 2em;
+  margin: 1em; /* Add margin for spacing between cards */
+  border: 1px solid #ccc; /* Optional: Add a border for better visibility */
+  border-radius: 8px; /* Optional: Add rounded corners */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Optional: Add a subtle shadow */
+  width: 100%; /* Set width to 100% to fill the container */
+  max-width: 800px; /* Set a maximum width for the card */
 }
 
-.read-the-docs {
-  color: #888;
+.card-image {
+  flex-shrink: 0; /* Prevent the image from shrinking */
+  width: 200px; /* Fixed width for the image container */
+  height: 300px; /* Fixed height for the image container */
+  overflow: hidden; /* Hide overflow to maintain uniformity */
+}
+
+.card-image img {
+  width: 100%; /* Make the image fill the card image width */
+  height: 100%; /* Make the image fill the card image height */
+  object-fit: cover; /* Cover the area while maintaining aspect ratio */
+  border-radius: 8px 8px 0 0; /* Round the top corners */
+}
+
+.card-content {
+  display: flex;
+  text-align: left;
+  flex-direction: column; /* Stack elements vertically */
+  padding-left: 1em; /* Add padding to separate content from the image */
+  flex-grow: 1; /* Allow content to take remaining space */
+}
+
+.card-location {
+  display: flex; /* Use flexbox for alignment */
+  align-items: center; /* Center items vertically */
+  margin-bottom: 0.5em; /* Space between location and other content */
+}
+
+.card-location i {
+  margin-right: 5px; /* Space between the icon and location text */
+}
+
+.gmaps {
+  margin-left: 5px; /* Space between location and link */
+  font-size: small; /* Adjust font size if needed */
+  color: rgba(0, 0, 0, 0.5); /* Make the font color transparent */
+}
+
+.gmaps a {
+  text-decoration: none; /* Remove underline from the link */
+  color: inherit; /* Inherit color from parent */
+}
+
+.card-title {
+  font-size: 1.5em; /* Adjust font size */
+  margin-bottom: 0.2em; /* Adjust margin to reduce space */
+}
+
+.dates {
+  font-weight: bold; /* Bold font for dates */
+  font-size: x-small; /* Small font size */
+  margin-bottom: 0.5em; /* Space between dates and description */
+}
+
+.card-description {
+  line-height: 1.5; /* Line height for readability */
+  text-align:left;
+  margin-top: 10%;
 }

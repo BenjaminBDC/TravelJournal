@@ -1,17 +1,31 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
+import Navbar from "./components/Navbar"
+import Card from "./components/Card"
 import './App.css'
+import data from './data'
 
 function App()
 {
-  const [count, setCount] = useState(0)
-
+  let cards = data.map((item) =>
+  {
+    return (
+      <Card
+        title={item.title}
+        location={item.location}
+        googleMapsUrl={item.googleMapsUrl}
+        startDate={item.startDate}
+        endDate={item.endDate}
+        description={item.description}
+        imageUrl={item.imageUrl}
+      />
+    )
+  })
   return (
     <>
-      <div>
-        <h1 className="text-3xl font-bold underline">Hello world!</h1>
 
+      <div>
+        <Navbar />
+        {cards}
       </div>
     </>
   )
